@@ -1,0 +1,17 @@
+
+class Solution {
+    public int addDigits(int num) {
+        int count = num ; 
+        int val = 0 ;
+        while(count > 0 ){
+            int rem = count % 10 ; 
+            val = val + rem ; 
+            count = count / 10 ;
+            if(count == 0 && val > 9){
+                count = val ; 
+                val = 0 ; 
+            }
+        } 
+        return val ; 
+    }
+}
