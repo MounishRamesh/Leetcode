@@ -1,0 +1,27 @@
+
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int[] ans = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            int current = nums1[i];
+            int default_1 = -1;
+            
+            for (int j = 0; j < nums2.length; j++) {
+                if (nums2[j] == current) {
+                    for (int k = j + 1; k < nums2.length; k++) {
+                        if (nums2[k] > current) {
+                            default_1 = nums2[k];
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            ans[i] = default_1;
+        }
+        
+        return ans;
+    }
+}
