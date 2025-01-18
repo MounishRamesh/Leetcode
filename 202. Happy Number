@@ -1,0 +1,25 @@
+
+class Solution {
+    public boolean isHappy(int n) {
+        int count = 0 ;
+        while(n > 0 ){
+            int val = n % 10 ; 
+            if(val == 0){
+                count = 0 ;
+            }
+            else{
+                count += val * val ; 
+            }
+            n = n / 10 ; 
+            if(n == 0 && count != 1 ){
+                n = count ;
+                count = 0 ;  
+            }
+        }
+        if(count == 1){
+            return true ;
+        } else {
+            return false ;
+        }
+    }
+}
