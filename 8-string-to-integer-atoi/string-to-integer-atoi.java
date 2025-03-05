@@ -23,10 +23,11 @@ class Solution {
                     count ++;
                 }
                 else if(ch == '+' && dig != 1){
+                    count2 ++ ;
                     if(i > 0 && s.charAt(i-1) >= '0' && s.charAt(i-1) <='9'){
                         break ;
                     }
-                    count2 ++ ;
+                    //count2 ++ ;
                 }
                 else if(ch == '-' && dig == 1){
                     break ;
