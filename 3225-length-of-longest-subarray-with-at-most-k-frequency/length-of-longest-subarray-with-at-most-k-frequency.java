@@ -1,25 +1,16 @@
-import java.util.HashMap;
-
 class Solution {
     public int maxSubarrayLength(int[] nums, int k) {
-        int i1 = 0;
-        int count = 0;
-        HashMap<Integer, Integer> hs = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            hs.put(nums[i], hs.getOrDefault(nums[i], 0) + 1);
-
-            while (hs.get(nums[i]) > k) {
-                hs.put(nums[i1], hs.get(nums[i1]) - 1);
-                if (hs.get(nums[i1]) == 0) {
-                    hs.remove(nums[i1]);
-                }
-                i1++;
+        int start = 0;
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        int max = 0;
+        for (int end = 0;end<nums.length;end++){
+            hm.put(nums[end],hm.getOrDefault(nums[end],0)+1);
+            while(hm.get(nums[end])>k){
+                hm.put(nums[start],hm.get(nums[start])-1);
+                start++;
             }
-
-            count = Math.max(count, i - i1 + 1);
+            max = Math.max(max,end-start+1);
         }
-
-        return count;
+        return max;
     }
 }
