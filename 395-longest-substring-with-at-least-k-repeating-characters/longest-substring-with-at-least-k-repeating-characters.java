@@ -27,20 +27,31 @@
 //         return s.length() ;
 //     }
 // }
+
 class Solution {
     public int longestSubstring(String s, int k) {
-        int freq [] = new int [26];
-        for(int i=0;i<s.length();i++){
-            freq[s.charAt(i)-'a']++;
+        return helper(s, 0, s.length(), k);
+    }
+    
+    private int helper(String s, int start, int end, int k) {
+        if (end - start < k) return 0; // If substring length is less than k, return 0
+        
+        int[] count = new int[26]; // Frequency array for characters
+        for (int i = start; i < end; i++) {
+            count[s.charAt(i) - 'a']++;
         }
-        int max =0;
-        for(int i=0;i<s.length();i++){
-            if(freq[s.charAt(i)-'a']<k&&freq[s.charAt(i)-'a']>0){
-                int right =longestSubstring(s.substring(0,i),k);
-                int left = longestSubstring(s.substring(i+1),k);
-                return  max = Math.max(right,left);
+        
+        for (int i = start; i < end; i++) {
+            if (count[s.charAt(i) - 'a'] > 0 && count[s.charAt(i) - 'a'] < k) {
+                // Split and process both halves separately
+                int next = i + 1;
+                while (next < end && count[s.charAt(next) - 'a'] < k) {
+                    next++;
+                }
+                return Math.max(helper(s, start, i, k), helper(s, next, end, k));
             }
         }
-        return s.length();
+        
+        return end - start; // If all characters meet the k condition, return the substring length
     }
 }
