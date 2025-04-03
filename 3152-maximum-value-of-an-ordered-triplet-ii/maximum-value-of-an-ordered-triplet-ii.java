@@ -7,12 +7,12 @@ class Solution {
         int[] arr2 = new int[n];  
 
         arr1[0] = nums[0];  
-        for (int i = 1; i < n; i++) {  
+        for (int i = 1; i < n-2; i++) {  
             arr1[i] = Math.max(arr1[i-1], nums[i]);  
         }  
 
         arr2[n - 1] = nums[n - 1];  
-        for (int i = n - 2; i >= 0; i--) {  
+        for (int i = n - 2; i >= 2; i--) {  
             arr2[i] = Math.max(arr2[i+1], nums[i]);  
         }  
 
