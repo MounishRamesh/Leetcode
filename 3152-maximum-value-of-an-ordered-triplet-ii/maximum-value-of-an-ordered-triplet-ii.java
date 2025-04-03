@@ -3,24 +3,24 @@ class Solution {
         int n = nums.length;
         if (n < 3) return 0; 
         
-        int[] lmax = new int[n];  
-        int[] rmax = new int[n];  
+        int[] arr1 = new int[n];  
+        int[] arr2 = new int[n];  
 
-        lmax[0] = nums[0];  
+        arr1[0] = nums[0];  
         for (int i = 1; i < n; i++) {  
-            lmax[i] = Math.max(lmax[i - 1], nums[i]);  
+            arr1[i] = Math.max(arr1[i-1], nums[i]);  
         }  
 
-        rmax[n - 1] = nums[n - 1];  
+        arr2[n - 1] = nums[n - 1];  
         for (int i = n - 2; i >= 0; i--) {  
-            rmax[i] = Math.max(rmax[i + 1], nums[i]);  
+            arr2[i] = Math.max(arr2[i+1], nums[i]);  
         }  
 
-        long maxVal = 0;  
+        long Val = 0;  
         for (int i = 1; i < n - 1; i++) {  
-            maxVal = Math.max(maxVal, (long) (lmax[i - 1] - nums[i]) * rmax[i + 1]);  
+            Val = Math.max(Val, (long) (arr1[i - 1] - nums[i]) * arr2[i + 1]);  
         }  
 
-        return maxVal;  
+        return Val;  
     }
 }
