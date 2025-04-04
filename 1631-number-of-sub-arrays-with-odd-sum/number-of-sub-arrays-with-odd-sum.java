@@ -1,6 +1,6 @@
 class Solution {
     public int numOfSubarrays(int[] arr) {
-        int val = 1_000_000_007 ;
+        int val = 1000000007 ;
         int odd = 0 ;
         int even = 1 ;
         int count = 0 ;
