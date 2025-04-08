@@ -1,22 +1,18 @@
 class Solution {
     public int minimumOperations(int[] nums) {
-        int count = 0;
-        for(int i =0 ;i < nums.length ;i +=3){
-            boolean val = false ;
-            HashMap<Integer,Integer> hs= new HashMap<>() ;
-            for(int j = i ;j < nums.length ;j ++){
-                if(hs.containsKey(nums[j])){
-                    val = true ;
+            int count = 0 ;
+            int ind = 0; 
+            HashMap<Integer,Integer> hs = new HashMap<>() ;
+            for(int i = nums.length-1 ;i >= 0; i--){
+                if(hs.containsKey(nums[i])){
+                    ind = i+1 ;
                     break ;
                 }
                 else{
-                    hs.put(nums[j] , 1); 
+                    hs.put(nums[i] , 1) ;
                 }
             }
-            if(val == true){
-                count ++ ;
-            }
-        }
-        return count  ;
+            
+            return (ind+2)/3 ;
     }
 }
