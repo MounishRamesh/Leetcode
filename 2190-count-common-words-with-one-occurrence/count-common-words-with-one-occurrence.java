@@ -21,28 +21,18 @@ class Solution {
             }
         }
         for(String s : hs.keySet()){
-            int val = hs.get(s) ;
-            if(val == 1){
+            if(hs.get(s) == 1){
                 if(hs1.containsKey(s)){
                     if(hs1.get(s) == 1){
                         count ++ ;
                     }
                 }
-            }
-        }
-        for(String s : hs1.keySet()){
-            int val = hs1.get(s) ;
-            if(val == 1){
-                if(hs.containsKey(s)){
-                    if(hs.get(s) == 1){
-                        count2 ++ ;
-                    }
+                else{
+                    hs1.put(s , 0) ;
                 }
             }
         }
-        if(count2 == count){
-            return count2 ;
-        }
-        return 0 ;
+        
+        return count ;
     }
 }
