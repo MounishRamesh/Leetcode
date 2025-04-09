@@ -5,13 +5,19 @@ class Solution {
         for(int i : nums){
             hs.add(i) ;
         }
-        for(int i = nums.length-1 ;i >=0 ;i --){
-            if(nums[i] < 0){
-                return -1 ;
+        int i = 0 ;
+        int j = nums.length-1 ;
+        while(i < j){
+            int val1 =  nums[i] ;
+            int val2 = nums[j] ;
+            if(val1 == -(val2)){
+                return val2 ;
             }
-            int val = nums[i] * -1 ;
-            if(hs.contains(val)){
-                return nums[i] ;
+            else if(Math.abs(val1) > Math.abs(val2)){
+                i ++ ;
+            }
+            else{
+                j -- ;
             }
         }
         return -1 ;
