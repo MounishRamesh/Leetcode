@@ -58,7 +58,7 @@ class Solution {
                 continue ;
             }
         }
-        System.out.println(dig + " " + upp + " " + low + " " + spe) ;
+    
         if(dig == true && upp == true && low == true && spe == true){
             return true ;
         }
