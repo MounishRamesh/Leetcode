@@ -1,10 +1,6 @@
 class Solution {
     public int findMaxK(int[] nums) {
-        Set<Integer> hs = new HashSet<>() ;
         Arrays.sort(nums) ;
-        for(int i : nums){
-            hs.add(i) ;
-        }
         int i = 0 ;
         int j = nums.length-1 ;
         while(i < j){
