@@ -1,26 +1,25 @@
 class Solution {
-    public int minimumRounds(int[] tasks) {
+    public int minimumRounds(int[] nums) {
+        Arrays.sort(nums) ;
         int count = 0 ;
-        HashMap<Integer , Integer > hs = new HashMap<>() ;
-        for(int num : tasks){
-            if(hs.containsKey(num)){
-                hs.put(num , hs.get(num) + 1) ;
+        int n = nums.length ;
+        int i =0 ;
+        while(i < n){
+            int val= 1 ;
+            while(i+1 < n && (nums[i] == nums[i+1])){
+                val ++ ;
+                i ++ ;
             }
-            else{
-                hs.put(num , 1); 
-            }
-        }
-        for(int val : hs.keySet()){
-            int ans = hs.get(val) ;
-            if(ans == 1){
+            if(val == 1){
                 return -1 ;
             }
-            if(ans % 3 == 0){
-                count = count + ans /3 ;
+            if(val % 3 == 0){
+                count += val / 3 ;
             }
             else{
-                count = count + (ans / 3) + 1 ;
+                count += val / 3 + 1 ;
             }
+            i ++ ;
         }
         return count ;
     }
