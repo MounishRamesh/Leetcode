@@ -11,8 +11,8 @@ class Solution {
             int count1 = 0 ;
             int count2 = 0 ;
             for(int i1 = 0 ;i1 < half ;i1 ++){
-                count1 += s.charAt(i1) ;
-                count2 += s.charAt(half + i1) ;
+                count1 += (int)s.charAt(i1) ;
+                count2 += (int)s.charAt(half + i1) ;
             }
             if(count1 == count2){
                 count ++ ;
