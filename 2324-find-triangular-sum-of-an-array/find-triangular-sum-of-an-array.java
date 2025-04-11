@@ -1,21 +1,13 @@
 class Solution {
     public int triangularSum(int[] nums) {
-        List<Integer> ls = new ArrayList<>() ;
-        for(int i= 0 ;i < nums.length ;i ++){
-            ls.add(nums[i]) ;
-        }
-        while(ls.size() > 1){
-            List<Integer>ls1 = new ArrayList<>() ;
-            for(int j = 0 ; j < ls.size()-1; j ++){
-                int val = (ls.get(j) + ls.get(j+1))% 10 ;
-                ls1.add(val) ; 
+
+        while(nums.length > 1){
+            int[] arr = new int[nums.length-1] ;
+            for(int i =0 ;i < nums.length-1 ;i ++){
+                arr[i] = (nums[i] + nums[i+1] )% 10 ;
             }
-            ls = ls1 ;
-            if(ls.size() == 1){
-                break ;
-            }
+            nums = arr ;
         }
-        int ans = ls.get(0); 
-        return ans ;
+        return nums[0] ;
     }
 }
