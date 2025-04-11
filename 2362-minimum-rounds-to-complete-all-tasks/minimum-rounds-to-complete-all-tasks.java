@@ -6,7 +6,7 @@ class Solution {
         int i =0 ;
         while(i < n){
             int val= 1 ;
-            while(i+1 != n && (nums[i] == nums[i+1])){
+            while(i+1 < n && (nums[i] == nums[i+1])){
                 val ++ ;
                 i ++ ;
             }
