@@ -11,12 +11,9 @@ class Solution {
             }
         }
         for(int i  : nums2){
-            if(hs.containsKey(i)){
-                hs.put( i ,hs.get(i) - 1) ;
+            if(hs.containsKey(i) && hs.get(i) > 0){
                 ls.add(i) ;
-                if(hs.get(i) == 0){
-                    hs.remove(i) ;
-                }
+                hs.put( i ,hs.get(i) - 1) ;
             }
         }
         int[] arr = new int[ls.size()] ;
