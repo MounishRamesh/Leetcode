@@ -1,19 +1,18 @@
 class Solution {
     public int countGoodTriplets(int[] arr, int a, int b, int c) {
-        int count = 0 ;
-        int n = arr.length ;
-        for(int i =0 ;i < n ; i++){
-            for(int j = i + 1; j < n ;j++){
-                for(int k = j + 1 ;k < n ;k ++){
-                    int val = Math.abs(arr[i] - arr[j]) ;
-                    int val2 = Math.abs(arr[j] - arr[k]) ;
-                    int val3 = Math.abs(arr[i] - arr[k]) ;
-                    if(val <= a && val2 <= b && val3 <= c){
-                        count ++ ;
+        int count=0;
+        int l=arr.length;
+        for(int i=0;i<l-2;i++){
+            for(int j=i+1;j<l-1;j++){
+                if(Math.abs(arr[i]-arr[j]) <= a ){
+                    for(int k=j+1;k<l;k++){
+                        if(Math.abs(arr[j]-arr[k]) <=b && 
+                        Math.abs(arr[i]-arr[k]) <=c){
+                            count++;
+                        }
                     }
                 }
             }
-        }
-        return count ;
+        }return count;
     }
 }
