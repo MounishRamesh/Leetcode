@@ -2,11 +2,9 @@ class Solution {
     public int maxRotateFunction(int[] nums) {
         int count = 0 ;
         int sum = 0 ;
-        for(int i : nums){
-            sum += i ;
-        }
         int ans = 0 ;
-        for(int i = 0 ; i< nums.length ;i ++){
+        for(int i = 0 ; i < nums.length; i ++){
+            sum += nums[i] ;
             ans = ans + ( i * nums[i]) ;
         }
         int n = nums.length ;
