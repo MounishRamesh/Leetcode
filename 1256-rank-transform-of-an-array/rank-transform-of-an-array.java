@@ -7,8 +7,6 @@ class Solution {
         Arrays.sort(arr) ;
         int[] arr2 = new int[arr.length] ;
         HashMap<Integer , Integer> hs = new HashMap<>() ;
-        HashMap<Integer , Integer> hs1 = new HashMap<>() ;
-        
         int j = 1 ;
         int n = arr.length ;
         if(n <= 0){
@@ -37,8 +35,7 @@ class Solution {
         int k = 0 ;
         for(int i : arr_val){
             if(hs.containsKey(i)){
-                int ans = hs.get(i) ;
-                arr[k] = ans ;
+                arr[k] = hs.get(i) ;
                 k ++ ;
             }
         }
