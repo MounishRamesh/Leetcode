@@ -31,7 +31,6 @@ class Solution {
             
             hs.put(arr[i] , arr2[i]) ;
         }
-        int[] arr3 = new int[arr.length] ;
         int k = 0 ;
         for(int i : arr_val){
             if(hs.containsKey(i)){
