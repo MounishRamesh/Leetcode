@@ -6,16 +6,13 @@ class Solution {
         int ind = 0 ;
         boolean ans = false ;
         for(int i = 1; i < arr.length ;i ++){
-            if(arr[i] > arr[i-1]){
-                ans = true ;
-            }
             if(arr[i] <= arr[i-1]){
                 ind = i-1 ;
-                System.out.println(ind + " ") ;
+                //System.out.println(ind + " ") ;
                 break ;
             }
         }
-        if(ans == false){
+        if(ind == -1 || ind == 0){
             return false ;
         }
         for(int i = ind ; i < arr.length-1 ; i ++){
