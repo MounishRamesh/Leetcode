@@ -5,9 +5,12 @@ class Solution {
             char ch = s.charAt(i) ;
             hs.put(ch ,hs.getOrDefault(ch,0)+1) ;
         }
-        int count = hs.get(s.charAt(0)) ;
+        int count = -1 ;
         for(int i : hs.values()){
-            if(i != count){
+            if(count == -1){
+                count = i ;
+            }
+            else if(i != count){
                 return false ;
             }
         }
