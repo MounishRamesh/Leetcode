@@ -4,7 +4,7 @@ class Solution {
         int right = num ;
         while(left <= right){
             int mid = left + (right-left)/2 ;
-            long val = (long)mid * mid ;
+            long val = (long) mid * mid ;
             System.out.print(val + " ") ;
             if(val == num){
                 return true ;
