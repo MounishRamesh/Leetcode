@@ -4,7 +4,9 @@ class Solution {
         for(String s : sentences){
             String[] arr = s.split(" ") ;
             int len = arr.length ;
-            max = Math.max(len , max) ;
+            if(len > max){
+                max = len ;
+            }
         }
         return max ;
     }
