@@ -4,24 +4,18 @@ class Solution {
         int j = num2.length()-1 ;
         StringBuilder sb = new StringBuilder() ;
         int rem = 0 ;
-        while(i >= 0 || j >= 0){
+        while(i >= 0 || j >= 0 || rem >0){
             int a = 0 ;
             int b = 0 ;
             if(i >= 0){
-                a = Character.getNumericValue(num1.charAt(i)) ;
+                a = (num1.charAt(i) - '0') ;
             }
             if(j >= 0){
-                b = Character.getNumericValue(num2.charAt(j)) ;
+                b = (num2.charAt(j) - '0') ;
             }
             int sum = a + b + rem ;
-            if(sum >= 10){
-                sum = sum % 10 ;
-                rem = 1; 
-            }
-            else{
-                rem = 0 ;
-            }
-            sb.append(sum) ;
+            rem = sum / 10 ;
+            sb.append(sum%10) ;
             i -- ;
             j -- ;
         }
