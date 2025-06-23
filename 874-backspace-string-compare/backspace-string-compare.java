@@ -6,7 +6,7 @@ class Solution {
             if(ch == '#' && (!st.isEmpty())){
                 st.pop() ;
             }
-            else{
+            else if(ch != '#'){
                 st.push(ch) ;
             }
         }
@@ -16,14 +16,10 @@ class Solution {
             if(ch == '#' && (!st1.isEmpty())){
                 st1.pop() ;
             }
-            else{
+            else if(ch != '#'){
                 st1.push(ch) ;
             }
         }
-        st.remove(Character.valueOf('#')) ;
-        st1.remove(Character.valueOf('#')) ;
-        System.out.println(st) ;
-        System.out.println(st1) ;
         if(st.equals(st1)){
             return true ;
         }
