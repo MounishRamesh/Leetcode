@@ -1,12 +1,12 @@
 class Solution {
-    public String convertToTitle(int a) {
+    public String convertToTitle(int num) {
         StringBuilder sb = new StringBuilder() ;
-        while(a > 0){
-            a -- ;
-            char ch = (char)('A' + (a%26)) ;
-            sb.insert(0,ch) ;
-            a/= 26 ;
+        while(num > 0){
+            num -- ;
+            char ch = (char)('A'+(num%26)) ;
+            sb.append(ch) ;
+            num /= 26 ;
         }
-        return sb.toString() ;
+        return sb.reverse().toString() ;
     }
 }
