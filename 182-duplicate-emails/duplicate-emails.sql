@@ -2,4 +2,4 @@
 SELECT Email 
 FROM person 
 group by Email
-Having count(email) > 1 ;
+Having count(*) > 1 ;
