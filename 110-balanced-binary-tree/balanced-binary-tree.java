@@ -33,9 +33,8 @@ class Solution {
         if(right == -1){
             return -1;
         }
-        System.out.println(left + " " + right) ;
-        int diff = Math.abs(left - right) ;
-        if(diff > 1){
+        //System.out.println(left + " " + right) ;
+        if( Math.abs(left - right)  > 1){
             return -1;
         }
         return 1+Math.max(left , right);
