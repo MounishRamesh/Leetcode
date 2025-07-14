@@ -10,13 +10,25 @@
  */
 class Solution {
     public int getDecimalValue(ListNode head) {
-        StringBuilder sb = new StringBuilder();
+        int a = findlength(head) ;
+        a-- ;
+        int count = 0 ;
         while(head != null){
-            sb.append(head.val);
+            int val = head.val ;
+            if(val != 0){
+                count += Math.pow(2,a) ;
+            }
+            a --;
             head = head.next ;
         }
-        String s = sb.toString();
-        int b1 = Integer.parseInt(s,2) ;
-        return b1 ;
+        return count ;
+    }
+    public static int findlength(ListNode head){
+        int count = 0 ;
+        while(head != null){
+            head = head.next ;
+            count ++;
+        }
+        return count ;
     }
 }
