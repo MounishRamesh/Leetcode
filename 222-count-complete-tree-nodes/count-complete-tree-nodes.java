@@ -16,18 +16,10 @@
 class Solution {
     public int countNodes(TreeNode root) {
         if(root == null){
-            return 0 ;
+            return 0;
         }
-        List<Integer> ls = new ArrayList<>() ;
-        inorder(root , ls ) ;
-        return ls.size();
-    }
-    public static void inorder(TreeNode root , List<Integer>ls){
-        if(root == null){
-            return ;
-        }
-        inorder(root.left , ls) ;
-        ls.add(root.val) ;
-        inorder(root.right , ls) ;
+        int left = countNodes(root.left) ;
+        int right = countNodes(root.right) ;
+        return left + right +1 ;
     }
 }
