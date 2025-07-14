@@ -15,9 +15,6 @@
  */
 class Solution {
     public boolean isBalanced(TreeNode root) {
-        if(root == null){
-            return true ;
-        }
         int val = recursion(root) ;
         if(val != -1){
             return true ;
