@@ -14,30 +14,21 @@
  * }
  */
 class Solution {
+    int pre = -1;
+    int min = Integer.MAX_VALUE ;
     public int getMinimumDifference(TreeNode root) {
         if(root == null){
-            return 0 ;
+            return min ;
         }
-        Queue<TreeNode> q = new LinkedList<>() ;
-        List<Integer> ls = new ArrayList<>() ;
-        q.add(root) ;
-        int a = Integer.MAX_VALUE;
-        while(!q.isEmpty()){
-            TreeNode curr = q.poll() ;
-            ls.add(curr.val) ;
-            if(curr.left != null){
-                q.add(curr.left) ;
-            }
-            if(curr.right != null){
-                q.add(curr.right) ;
-            }
+        getMinimumDifference(root.left) ;
+        if(pre !=-1){
+            min = Math.min(min , root.val-pre) ;
+            pre = root.val ;
         }
-        Collections.sort(ls) ;
-        int min = Integer.MAX_VALUE ;
-        for(int i = 1 ;i < ls.size() ;i ++){
-            int diff = Math.abs(ls.get(i) - ls.get(i-1)) ;
-            min = Math.min(min , diff) ;
+        if(pre == -1){
+            pre = root.val;
         }
-        return min ;
+        getMinimumDifference(root.right) ;
+        return min; 
     }
 }
