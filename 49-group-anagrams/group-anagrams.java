@@ -5,7 +5,11 @@ class Solution {
             String s = strs[i] ;
             char[] arr = s.toCharArray() ;
             Arrays.sort(arr) ;
-            String s1 = new String(arr) ;
+            StringBuilder sb = new StringBuilder() ;
+            for(char ch : arr){
+                sb.append(ch) ;
+            }
+            String s1 = sb.toString() ;
             if(!hs.containsKey(s1)){
                 hs.put(s1 , new ArrayList<>()) ;
             }
