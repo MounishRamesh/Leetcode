@@ -6,10 +6,8 @@ class Solution {
             int sum = 0 ;
             if(n%i == 0){
                 sum = nums[i-1] ;
+                count += sum*sum ;
             }
-            System.out.println(sum + " ") ;
-            count += Math.pow(sum , 2) ;
-            //System.out.println(sum + " "+ count) ;
         }
         return count ;
     }
