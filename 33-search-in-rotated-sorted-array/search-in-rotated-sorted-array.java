@@ -1,13 +1,30 @@
 class Solution {
-    public int search(int[] nums, int target) {
-        for(int i = 0 ;i < nums.length ;i ++){
-            for(int j = i  ;j < nums.length ;j ++){
-                if(nums[j] == target){
-                    return j ;
+    public int search(int[] arr, int target) {
+        int i = 0 ;
+        int j = arr.length-1 ;
+        while(i <= j){
+            int mid = i+(j-i)/2 ;
+            if(arr[mid] == target){
+                return mid ;
+            }
+            else if(arr[i] <= arr[mid]){
+                if(target >= arr[i] && target < arr[mid]){
+                    j = mid-1 ;
+                }
+                else{
+                    i = mid+1 ;
                 }
             }
-            break ;
+            else{
+                if(target <= arr[j] && target > arr[mid]){
+                    i = mid +1 ;
+                }
+                else{
+                    j = mid-1;
+                }
+            }
+            // System.out.println(i + " " + j + " " + mid) ;
         }
         return -1 ;
     }
-}
+} 
