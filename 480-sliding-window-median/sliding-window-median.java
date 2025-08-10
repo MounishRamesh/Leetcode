@@ -14,21 +14,22 @@ class Solution {
         for (int i = k; i < n; i++) {
             int out = nums[i - k];
             int idx = binarySearch(window, out);
+            //System.out.println(idx); 
             window.remove(idx);
             int in = nums[i];
             int insertIdx = binarySearch(window, in);
-
+            // System.out.println(insertIdx) ;
             if (insertIdx < 0) {
                 insertIdx = -insertIdx - 1;
             }
-
+            System.out.println(insertIdx) ;
             window.add(insertIdx, in);
             ans[i - k + 1] = getMedian(window, k);
         }
         return ans;  
     }
 
-    private double getMedian(List<Integer> window, int k) {
+    public double getMedian(List<Integer> window, int k) {
         if (k % 2 == 1) {
            return window.get(k / 2);
         } else {
@@ -36,7 +37,7 @@ class Solution {
         }
     }
 
-    private int binarySearch(List<Integer> list, int target) {
+    public int binarySearch(List<Integer> list, int target) {
         int l = 0, r = list.size() - 1;
 
         while (l <= r) {
@@ -50,6 +51,6 @@ class Solution {
                 r = mid - 1;
             }
         }
-        return -l -1;
+        return l;
     }
 }
