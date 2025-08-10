@@ -18,11 +18,6 @@ class Solution {
             window.remove(idx);
             int in = nums[i];
             int insertIdx = binarySearch(window, in);
-            // System.out.println(insertIdx) ;
-            // if (insertIdx < 0) {
-            //     insertIdx = -insertIdx - 1;
-            // }
-            System.out.println(insertIdx) ;
             window.add(insertIdx, in);
             ans[i - k + 1] = getMedian(window, k);
         }
