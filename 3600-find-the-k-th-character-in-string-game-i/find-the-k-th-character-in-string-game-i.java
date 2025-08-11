@@ -1,22 +1,19 @@
 class Solution {
     public char kthCharacter(int k) {
-        StringBuilder sb = new StringBuilder() ;
-        sb.append('a') ;
-        while(sb.length() <= k){
-            String s = sb.toString() ;
-            //sb.append(s) ;
-            for(int i = 0 ; i < s.length() ; i ++){
-                char ch = (char)(s.charAt(i)+1) ;
-                if(ch == 'z'){
-                    sb.append('a') ;
-                }
-                else{
-                    sb.append(ch) ;
-                }
-            }
+        char ch = 'a' ;
+        int length =1 ;
+        while(length < k){
+            length *= 2 ;
         }
-        String n = sb.toString() ;
-        System.out.println(n) ;
-        return n.charAt(k-1) ;
+        while(length > 1){
+            int half = length/2 ;
+            if(k > half){
+                k = k - half ;
+                ch = (char)((ch-'a'+1)%26+'a'); 
+
+            }
+            length /= 2 ;
+        }
+        return ch ;
     }
 }
