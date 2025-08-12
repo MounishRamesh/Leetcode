@@ -14,30 +14,23 @@
  * }
  */
 class Solution {
-    public boolean hasPathSum(TreeNode root, int tar) {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
         if(root == null){
             return false ;
         }
-        if(path(root , 0 , tar)== 1){
-            return true ;
+        if(path(root , targetSum , 0)){
+            return true; 
         }
-       // System.out.println(path(root , 0 , tar)); 
         return false ;
     }
-    public static int path(TreeNode root , int sum , int tar){
+    public static boolean path(TreeNode root , int tar , int sum){
         if(root == null){
-            return 0 ;
+            return false ;
         }
-        sum += root.val ;
-         if(root.left==null && root.right==null && sum == tar){
-            return 1 ;
+        sum += root.val; 
+        if(sum == tar&& root.left == null && root.right == null){
+            return true ;
         }
-        if(path(root.left , sum , tar) ==1)
-        return 1;
-
-        if(path(root.right , sum , tar)==1)
-        return 1;
-
-        return 0;
+        return (path(root.left , tar , sum) || path(root.right , tar , sum)) ;
     }
 }
