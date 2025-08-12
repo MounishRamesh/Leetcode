@@ -26,7 +26,7 @@ class Solution {
         if(depth == ls.size()){
             ls.add(root.val) ;
         }
-        System.out.println(depth + " "+ ls.size()) ;
+       // System.out.println(depth + " "+ ls.size()) ;
         totalview(root.right , ls , depth+1) ;
         totalview(root.left , ls , depth+1) ;
     }
