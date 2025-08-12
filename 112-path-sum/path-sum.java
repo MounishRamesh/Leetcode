@@ -18,20 +18,26 @@ class Solution {
         if(root == null){
             return false ;
         }
-        return path(root , 0 , tar);
-            //return true ;
-        //}
+        if(path(root , 0 , tar)== 1){
+            return true ;
+        }
        // System.out.println(path(root , 0 , tar)); 
-        // return false ;
+        return false ;
     }
-    public static boolean path(TreeNode root , int sum , int tar){
+    public static int path(TreeNode root , int sum , int tar){
         if(root == null){
-            return false ;
+            return 0 ;
         }
         sum += root.val ;
-         if (root.left == null && root.right == null) {
-            return sum == tar;
+         if(root.left==null && root.right==null && sum == tar){
+            return 1 ;
         }
-       return path(root.left , sum , tar) || path(root.right , sum , tar) ;
+        if(path(root.left , sum , tar) ==1)
+        return 1;
+
+        if(path(root.right , sum , tar)==1)
+        return 1;
+
+        return 0;
     }
 }
