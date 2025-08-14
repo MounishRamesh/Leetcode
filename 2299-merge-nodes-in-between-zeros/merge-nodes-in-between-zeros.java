@@ -10,28 +10,21 @@
  */
 class Solution {
     public ListNode mergeNodes(ListNode head) {
-        ListNode curr = head ;
-        List<Integer> ls = new ArrayList<>() ;
-        while(curr != null){
-            ls.add(curr.val) ;
-            curr = curr.next ;
-        }
+        ListNode dummy = new ListNode(0) ;
+        ListNode curr = dummy ;
         int sum = 0 ;
-        List<Integer> ls1 = new ArrayList<>() ;
-        for(int i = 1; i < ls.size() ;i ++){
-            if(ls.get(i) == 0){
-                ls1.add(sum) ;
-                // System.out.println(ls1) ;
+        head= head.next ;
+        while(head != null){
+            if(head.val == 0){
+                curr.next = new ListNode(sum) ;
+                curr = curr.next ;
                 sum = 0 ;
             }
-            sum = sum + ls.get(i) ;
+            else{
+                sum += head.val ;
+            }
+            head = head.next ;
         }
-        ListNode tree = new ListNode(ls1.get(0)) ;
-        ListNode temp = tree ;
-        for(int i = 1 ;i < ls1.size() ; i ++){
-            temp.next = new ListNode(ls1.get(i)) ;
-            temp = temp.next ;
-        }
-        return tree ;
+        return dummy.next ;
     }
 }
