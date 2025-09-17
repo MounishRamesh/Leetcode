@@ -21,7 +21,7 @@ class Solution {
             System.out.print(i1 + " ") ;
         }
         StringBuilder sb = new StringBuilder() ;
-        for(int k = 0 ; k <= n+2000 ; k ++){
+        for(int k = 0 ; k <= n+1000 ; k ++){
             for(int l = 0 ; l < arr.length ;l ++){
                 if(arr[l] == k){
                     sb.append(s.charAt(l)) ;
