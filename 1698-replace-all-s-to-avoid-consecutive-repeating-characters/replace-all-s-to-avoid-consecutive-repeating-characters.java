@@ -4,7 +4,7 @@ class Solution {
         for(int i = 0 ; i < s.length() ;i ++){
             if(arr[i] == '?'){
                 char ch = arr[i] ;
-                for(char j = 'a' ; j <= 'c' ;j ++){
+                for(char j = 'a' ; j <= 'd' ;j ++){
                     if((i > 0 && arr[i-1] == j) || (i < arr.length-1 && arr[i+1] == j)){
                         continue ;
                     }
