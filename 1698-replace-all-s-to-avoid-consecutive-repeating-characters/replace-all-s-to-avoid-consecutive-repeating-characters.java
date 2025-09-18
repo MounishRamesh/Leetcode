@@ -1,35 +1,21 @@
 class Solution {
     public String modifyString(String s) {
-        if(s.length() == 1){
-            return "a" ;
-        }
-        String[] arr = s.split("") ;
-        List<String> ls = new ArrayList<>() ;
-        for(int i = 0 ; i < arr.length ;i ++){
-            if(arr[i].equals("?")){
-                if(i == 0){
-                    ls.add(arr[i+1]) ;
-                }
-                else if(i == arr.length-1){
-                    ls.add(arr[arr.length-2]) ;
-                }
-                else{
-                    ls.add(arr[i-1]) ;
-                    ls.add(arr[i+1]) ;
-                }
-                for(int j = 0 ; j < 27 ; j ++){
-                    char ch = (char)(j+'a') ;
-                    if(!ls.contains(String.valueOf(ch))){
-                        System.out.println(ch) ;
-                        arr[i] = Character.toString(ch) ;
-                        break ;
+        char[] arr = s.toCharArray() ;
+        for(int i = 0 ; i < s.length() ;i ++){
+            if(arr[i] == '?'){
+                char ch = arr[i] ;
+                for(char j = 'a' ; j <= 'z' ;j ++){
+                    if((i > 0 && arr[i-1] == j) || (i < arr.length-1 && arr[i+1] == j)){
+                        continue ;
                     }
+                    arr[i] = j ;
+                    break ;
                 }
+                
             }
-            ls.clear(); 
         }
         StringBuilder sb = new StringBuilder() ;
-        for(String i : arr){
+        for(char i : arr){
             sb.append(i) ;
         }
         return sb.toString() ;
