@@ -4,7 +4,7 @@ class Solution {
         int j = nums.length-1 ;
         while(i <= j){
             int mid = i-(i-j)/2 ;
-            System.out.println(mid) ;
+            // System.out.println(mid) ;
             if(nums[mid] == target){
                 return mid ;
             }
