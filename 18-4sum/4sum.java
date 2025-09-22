@@ -7,7 +7,7 @@ class Solution {
                 int left = j+1 ;
                 int right = nums.length-1 ;
                 while(left < right){
-                    long sum = (long)((long)nums[i]+(long)nums[j]+(long)nums[left]+(long)nums[right]) ;
+                    long sum = (long) nums[i]+nums[j]+nums[left]+nums[right] ;
                     // System.out.println(sum) ;
                     if(sum == target){
                         List<Integer> ls1 = new ArrayList<>() ;
