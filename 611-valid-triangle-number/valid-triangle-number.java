@@ -1,14 +1,18 @@
 class Solution {
     public int triangleNumber(int[] nums) {
         int count = 0 ;
+        int n = nums.length ;
         Arrays.sort(nums) ;
-        for(int i = 0 ; i < nums.length ; i ++){
-            for(int j = i+1 ; j < nums.length ;j ++){
-                int sum = nums[i]+nums[j] ;
-                for(int k = j+1 ; k < nums.length ; k ++){
-                    if(sum > nums[k]){
-                        count ++ ;
-                    }
+        for(int k = n-1 ;k >= 0 ; k --){
+            int i = 0 ;
+            int j = k-1 ;
+            while(i < j){
+                if(nums[i]+nums[j] > nums[k]){
+                    count += (j-i) ;
+                    j -- ;
+                }
+                else{
+                    i ++ ;
                 }
             }
         }
