@@ -13,7 +13,6 @@ class Solution {
                 }
                 j ++ ;
             }
-            System.out.println(i + " " + j) ;
             count += (i-j)+1 ;
         }
         int count1 = 0 ;
