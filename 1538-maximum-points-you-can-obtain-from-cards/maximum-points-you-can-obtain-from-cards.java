@@ -12,7 +12,7 @@ class Solution {
             left += c[i] ;
             sum = sum - c[n-k+i] ;
             max = Math.max(max , left+sum) ;
-            System.out.println(left+" " + sum) ;
+            // System.out.println(left+" " + sum) ;
         }
         return max;
     }
