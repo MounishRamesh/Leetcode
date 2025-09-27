@@ -21,7 +21,7 @@ class Solution {
                     b -- ;
                     a -- ;
                 }
-                else if(b == 0 && a >= 3){
+                else if( a >= 3){
                     a -= 3 ;
                 }
                 else{
