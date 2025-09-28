@@ -5,7 +5,7 @@ class Solution {
         int j = nums.length-1 ;
         while(j >= 2){
             int sum = nums[j-1]+nums[j-2] ;
-            System.out.println(sum) ;
+            // System.out.println(sum) ;
             if(sum > nums[j]){
                 count = nums[j-1]+nums[j-2]+nums[j] ;
                 break ;
