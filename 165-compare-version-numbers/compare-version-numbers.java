@@ -53,7 +53,7 @@ class Solution {
                     sb1.append(0) ;
                 }
             }
-            System.out.println(sb.toString() +" " +  sb1.toString()) ;
+            // System.out.println(sb.toString() +" " +  sb1.toString()) ;
             int a2 = Integer.parseInt(sb.toString()) ;
             int b2 = Integer.parseInt(sb1.toString()) ;
             if(a2 < b2){
