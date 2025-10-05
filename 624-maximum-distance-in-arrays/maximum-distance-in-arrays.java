@@ -1,11 +1,11 @@
 class Solution {
     public int maxDistance(List<List<Integer>> a) {
-        HashMap<Integer , List<Integer>> hs = new HashMap<>() ;
-        int ind = 0 ;
-        for(List<Integer> i : a){
-            hs.put(ind , i) ;
-            ind ++ ;
-        }
+        // HashMap<Integer , List<Integer>> hs = new HashMap<>() ;
+        // int ind = 0 ;
+        // for(List<Integer> i : a){
+        //     hs.put(ind , i) ;
+        //     ind ++ ;
+        // }
         int min = Integer.MAX_VALUE ;
         int max1 = Integer.MIN_VALUE ;
         int a1 = 0 ;
@@ -24,11 +24,9 @@ class Solution {
             }
             ind2 ++ ;
         }
-        // System.out.println(max1 +" " + a1) ;
         int max = Integer.MIN_VALUE ;
         int min1 = Integer.MAX_VALUE ;
         int ind3 = 0 ;
-        
         for(List<Integer> i : a){
             for(int j : i){
                 if(j > max && ind3 != a1){
