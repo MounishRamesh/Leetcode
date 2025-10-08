@@ -15,7 +15,6 @@ class Solution {
         HashSet<Integer> hs1 = new HashSet<>() ;
         for(int i = arr.length-1 ; i >= 0 ;i --){
             int val = arr[i] ;
-            // System.out.println(arr[i]) ;
             while(hs1.contains(val)){
                 val -- ;
                 count ++ ;
@@ -24,7 +23,6 @@ class Solution {
                 }
             }
             hs1.add(val) ;
-            System.out.println(hs1) ;
         }
         return count ;
     }
