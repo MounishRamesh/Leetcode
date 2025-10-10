@@ -8,7 +8,7 @@ class Solution {
             }
             List<Integer> ls = hs.get(g[i]) ;
             if(ls.size() >= g[i]){
-                System.out.println(ls) ;
+                // System.out.println(ls) ;
                 ls1.add(ls) ;
                 hs.put(g[i] , new ArrayList<>()) ;
             }
