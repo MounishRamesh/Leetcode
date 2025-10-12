@@ -25,7 +25,7 @@ class Solution {
                 }
                 // System.out.print(count2+" " + max+" ") ;
             }
-            System.out.println() ;
+            // System.out.println() ;
             for(int l = 0 ; l < max ; l ++){
                 ls.add(Character.toString(ch)) ;
             }
