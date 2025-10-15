@@ -16,16 +16,12 @@ class Solution {
     }
     public static boolean check(int i , int j , int[][] arr){
         for(int k = 0 ; k < arr.length ; k ++){
-            // System.out.print(k+" " + i + " ") ;
             if(arr[k][j] == 1 && k != i){
                 return false ;
             }
         }
-        // System.out.println() ;
         for(int k = 0 ; k < arr[0].length ; k ++){
-            // System.out.print(k+" " + j+ " ") ;
             if(arr[i][k] == 1 && k != j){
-                // System.out.print(k+" " + j+ " ") ;
                 return false ;
             }
         }
