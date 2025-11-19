@@ -1,14 +1,15 @@
 class Solution {
-    public int findFinalValue(int[] nums, int original) {
-        int i = 0 ;
-        int k = original ;
-        while(i < nums.length){
-            if(nums[i] == k){
-                k = k * 2 ;
-                i = -1 ;
-            }
-            i ++ ;
+    public int findFinalValue(int[] nums, int o) {
+        int count = o ;
+        HashSet<Integer> hs = new HashSet<>() ;
+        for(int i : nums){
+            hs.add(i);
         }
-        return k ;
+        boolean ans = false ;
+        while(hs.contains(count)){
+            count = count * 2 ;
+            ans = true ;
+        }
+        return count ;
     }
 }
