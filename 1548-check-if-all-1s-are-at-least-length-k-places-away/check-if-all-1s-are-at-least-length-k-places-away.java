@@ -7,7 +7,7 @@ class Solution {
                 break ;
             }
         }
-        System.out.println(last) ;
+        // System.out.println(last) ;
         for(int i = 0 ; i < nums.length ; i ++){
             if(nums[i] == 1){
                 int count = addval(nums , i+1 , k) ;
