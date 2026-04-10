@@ -7,7 +7,6 @@ class Solution:
         for i in range(1,len(nums)):
             arr[i] = pre
             pre *= nums[i]
-        print(arr)
         prev1 = nums[len(nums)-1]
         for i in range(len(nums)-2,0,-1):
             print(arr[i]," ",prev1)
